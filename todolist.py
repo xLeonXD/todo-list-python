@@ -1,7 +1,9 @@
+
 import json
 import os
-file_name = "C:\\Users\\leon\\PyCharmMiscProject\\projects made by me\\back to python 2 week plan\\todolist.json"
+import time
 
+file_name = "todolist.json"
 def save_work(filename,x):
     if os.path.exists(filename):
         with open(filename,"r") as file:
@@ -88,6 +90,11 @@ while True:
         x = input("Which work do you wanna remove?")
         remove_work(file_name,x)
     elif choice.lower() == "exit":
-        print("Exiting...")
+        print("Exiting",end="")
+        time.sleep(0.25)
+        dots = 3
+        for dot in range(dots):
+            print(".",end="")
+            time.sleep(0.25)
         break
 
